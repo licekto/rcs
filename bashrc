@@ -136,8 +136,19 @@ alias gf='git commit --fixup=`git rev-parse HEAD`'
 alias gb='git checkout -b'
 alias gr='git remote -v'
 
+
 addCommitPush ()
 {
+    if [ -z $1 ] ; then
+        echo "Commit message must not by empty"
+        return
+    fi
+    CHANGES=`git diff --exit-code`
+    if [ -z $CHANGES ] ; then
+        echo "No changes to commit"
+        return
+    fi
+
     git add .
     git commit -m "$1"
     git push
