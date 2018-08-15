@@ -138,12 +138,14 @@ alias gr='git remote -v'
 
 addCommitPush ()
 {
-    if [ -z $1 ] ; then
+    if [ -z "$1" ] ; then
         echo "Commit message must not by empty"
         return
     fi
+
     CHANGES=`git diff --exit-code`
-    if [ -z $CHANGES ] ; then
+
+    if [ -z "$CHANGES" ] ; then
         echo "No changes to commit"
         return
     fi
