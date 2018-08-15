@@ -127,7 +127,13 @@ alias gas='git add . && git status'
 alias gc='git commit -m'
 alias gp='git push'
 alias gch='git checkout'
+alias gchm='git checkout master'
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+alias gpl='git pull'
+alias gsu='git submodule update'
+alias gu='git pull && git submodule update'
+alias gf='git commit --fixup=`git rev-parse HEAD`'
+alias gb='git checkout -b'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++1z -ggdb -O0'
