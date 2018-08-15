@@ -134,6 +134,16 @@ alias gsu='git submodule update'
 alias gu='git pull && git submodule update'
 alias gf='git commit --fixup=`git rev-parse HEAD`'
 alias gb='git checkout -b'
+alias gr='git remote -v'
+
+addCommitPush ()
+{
+    git add .
+    git commit -m "$1"
+    git push
+}
+
+alias gacp='addCommitPush'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++1z -ggdb -O0'
