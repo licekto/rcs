@@ -136,7 +136,6 @@ alias gf='git commit --fixup=`git rev-parse HEAD`'
 alias gb='git checkout -b'
 alias gr='git remote -v'
 
-
 addCommitPush ()
 {
     if [ -z $1 ] ; then
