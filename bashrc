@@ -119,6 +119,8 @@ extract ()
 
 export -f extract
 
+alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+
 addCommitPush ()
 {
     if [ -z "$1" ] ; then
@@ -135,7 +137,7 @@ addCommitPush ()
 
     git add .
     git commit -m "$1"
-    git push
+    gpu
 }
 
 # Git
@@ -147,7 +149,6 @@ alias gc='git commit -m'
 alias gp='git push'
 alias gch='git checkout'
 alias gchm='git checkout master'
-alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gpl='git pull'
 alias gsu='git submodule update'
 alias gu='git pull && git submodule update'
