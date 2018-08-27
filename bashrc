@@ -6,6 +6,9 @@
 # Allow for "**" globbing
 shopt -s globstar
 
+# Disable suspending the terminal with CTRL+S
+stty -ixon
+
 #PS1='[\u@\h \W]\$ '
 
 #PS1="┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \[\e[31m\]✘\[\e[0m\]; fi\`]───[\[\e[01;49;39m\]\u\[\e[00m\]\[\e[01;49;39m\]@\H\[\e[00m\]]───[\[\e[1;49;34m\]\W\[\e[0m\]]───[\[\e[1;49;39m\]\$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\[\e[0m\]]\n└───▶ "
@@ -156,6 +159,8 @@ alias gf='git commit --fixup=`git rev-parse HEAD`'
 alias gb='git checkout -b'
 alias gr='git remote -v'
 alias gacp='addCommitPush'
+alias gash='git stash'
+alias gashc='git stash clear'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++1z -ggdb -O0'
