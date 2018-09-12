@@ -6,6 +6,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set list
+
+set incsearch
+set hlsearch
 
 " IP address check
 match ErrorMsg /\(2[5][6-9]\|2[6-9][0-9]\|[3-9][0-9][0-9]\)[.][0-9]\{1,3\}[.][0-9]\{1,3\}[.][0-9]\{1,3\}\|[0-9]\{1,3\}[.]\(2[5][6-9]\|2[6-9][0-9]\|[3-9][0-9][0-9]\)[.][0-9]\{1,3\}[.][0-9]\{1,3\}\|[0-9]\{1,3\}[.][0-9]\{1,3\}[.]\(2[5]\[6-9]\|2[6-9][0-9]\|[3-9][0-9][0-9]\)[.][0-9]\{1,3\}\|[0-9]\{1,3\}[.][0-9]\{1,3\}[.][0-9]\{1,3\}[.]\(2[5][6-9]\|2[6-9][0-9]\|[3-9][0-9][0-9]\)/
@@ -21,3 +25,5 @@ let mapleader = '-'
 map <silent><Leader>xy :w !xsel -i -p<cr><cr>
 " Paste from x-clipboard
 map <silent><Leader>xp :r !xsel -p<cr>
+
+nnoremap <leader><space> :nohlsearch<CR>
