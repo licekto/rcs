@@ -161,6 +161,7 @@ alias gr='git remote -v'
 alias gacp='addCommitPush'
 alias gash='git stash'
 alias gashc='git stash clear'
+alias gria='git rebase --interactive --autosquash'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++1z -ggdb -O0'
