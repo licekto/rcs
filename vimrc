@@ -14,3 +14,4 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%0
 
 set cursorline
 highlight cursorline ctermbg=235 term=bold cterm=bold
+set showcmd
