@@ -145,7 +145,7 @@ addCommitPush ()
 
 # Git
 alias gs='git status'
-alias gl='git log --graph'
+alias gl='git log --graph -7'
 alias gds='git diff && git status'
 alias gas='git add . && git status'
 alias gc='git commit -m'
@@ -162,6 +162,7 @@ alias gacp='addCommitPush'
 alias gash='git stash'
 alias gashc='git stash clear'
 alias gria='git rebase --interactive --autosquash'
+alias gch='git checkout .'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++1z -ggdb -O0'
