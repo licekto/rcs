@@ -92,12 +92,7 @@ function set_bash_prompt
 
 PROMPT_COMMAND=set_bash_prompt
 
-PATH="/home/tomas/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/tomas/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/tomas/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/tomas/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/tomas/perl5"; export PERL_MM_OPT;
-
+# Extract
 extract ()
 {
    if [ -f $1 ] ; then
@@ -122,6 +117,7 @@ extract ()
 
 export -f extract
 
+# Git
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 
 addCommitPush ()
@@ -143,7 +139,6 @@ addCommitPush ()
     gpu
 }
 
-# Git
 alias gs='git status'
 alias gl='git log --graph -7'
 alias gds='git diff && git status'
@@ -178,3 +173,6 @@ alias ls='ls --color=auto'
 alias l='ls -lSh'
 alias la='l -a'
 alias diskspace='du -S | sort -n -r |more'
+
+# Vim as a default editor
+export EDITOR=vim

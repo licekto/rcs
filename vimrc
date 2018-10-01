@@ -22,10 +22,37 @@ set cursorline
 highlight cursorline ctermbg=235 term=bold cterm=bold
 set showcmd
 
-let mapleader = '-' 
+let mapleader="-"
 " Copy to x-clipboard
-map <silent><Leader>xy :w !xsel -i -p<cr><cr>
+vmap <silent><Leader>xy :w !xsel -i -b<cr><cr>
 " Paste from x-clipboard
-map <silent><Leader>xp :r !xsel -p<cr>
+map <silent><Leader>xp :r !xsel -b<cr>
 
 nnoremap <leader><space> :nohlsearch<CR>
+
+" SpellCheck
+" Documentation: http://vimdoc.sourceforge.net/htmldoc/spell.html
+" Currently turned off
+" set spell
+set spelllang=en_us
+set spellfile="en.utf-8.spl"
+set spellcapcheck=
+hi SpellBad ctermfg=white
+
+" Navigate through wrapped lines
+map <DOWN> gj
+map <UP> gk
+imap <DOWN> <ESC>gji
+imap <UP> <ESC>gki
+
+" Show changes made until the last save
+function! DiffWithFileFromDisk()
+    let filename=expand('%')
+    let diffname = filename.'.fileFromBuffer'
+    exec 'saveas! '.diffname
+    diffthis
+    vsplit
+    exec 'edit '.filename
+    diffthis
+endfunction
+nmap <F7> :call DiffWithFileFromDisk()<cr>

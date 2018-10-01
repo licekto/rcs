@@ -29,3 +29,15 @@ Reading and merging/including external text:
  shift-v - Mark whole line
 
 :let mapleader - show <leader> char
+
+A - append to the end of the line
+o - insert on the new line
+
+[[ and ][: Move backwards / forward to the next section beginning (for example, start of a function)
+[] and ]]: Move backwards / forward to the next section end (for example, end of a function)
+
+[{: Move to the beginning of the block
+]}: Move to the end of the block
+
+gD - goto declaration
+gf - goto file under cursor
