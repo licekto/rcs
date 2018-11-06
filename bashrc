@@ -159,7 +159,7 @@ alias gsu='git submodule update'
 alias gu='git pull && git submodule update'
 
 # Compile
-alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++1z -ggdb -O0'
+alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++17 -ggdb -O0'
 alias valgrindxx='valgrind --leak-check=full --show-reachable=yes --track-origins=yes'
 
 # Command-line
