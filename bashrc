@@ -120,7 +120,7 @@ export -f extract
 # Git
 alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 
-addCommitPush ()
+add_commit_push ()
 {
     if [ -z "$1" ] ; then
         echo "Commit message must not by empty"
@@ -182,3 +182,13 @@ export EDITOR=vim
 
 # Download mp3 from youtube
 alias dl-yt='youtube-dl --extract-audio --audio-format mp3'
+
+# Docker
+
+docker_clean() {
+    docker kill $(docker ps -q)
+    docker rm $(docker ps -aq)
+    docker rmi $(docker images -q)
+}
+
+alias dckr-clean='docker_clean'
