@@ -127,7 +127,7 @@ add_commit_push ()
         return
     fi
 
-    CHANGES=`git diff --exit-code`
+    CHANGES=$(git diff --exit-code && git ls-files . --others)
 
     if [ -z "$CHANGES" ] ; then
         echo "No changes to commit"
@@ -149,18 +149,19 @@ alias gbrrm='git push origin --delete'
 alias gc='git commit -m'
 alias gch='git checkout .'
 alias gchm='git checkout master'
-alias gds='git diff && git status'
+alias gds='git diff --check && git status'
 alias gf='git commit --fixup=`git rev-parse HEAD`'
-alias gl='git log --graph -7'
+alias gl='git log --graph -7 --oneline'
 alias gp='git push'
-alias gpl='git pull'
+alias gpull='git pull'
 alias gr='git remote -v'
 alias gria='git rebase --interactive --autosquash'
 alias grm='git clean -f'
 alias grmcheck='git clean -n'
 alias gs='git status'
 alias gsu='git submodule update'
-alias gu='git pull && git submodule update'
+alias gu='git fetch && git submodule update'
+alias gunstage='git reset HEAD'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -Weffc++ -std=c++17 -ggdb -O0'
