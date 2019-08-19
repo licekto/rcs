@@ -139,7 +139,7 @@ add_commit_push ()
     gpu
 }
 
-alias gacp='addCommitPush'
+alias gacp='add_commit_push'
 alias gas='git add . && git status'
 alias gash='git stash'
 alias gashc='git stash clear'
