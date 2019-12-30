@@ -113,7 +113,7 @@ extract ()
    else
        echo "'$1' is not a valid file!"
    fi
- }
+}
 
 export -f extract
 
