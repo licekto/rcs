@@ -7,7 +7,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-set list
+" Show tabs as characters ^I
+" set list
 
 set incsearch
 set hlsearch
