@@ -64,7 +64,6 @@ function end_module
 function retval_module
 {
     RETVAL=$?
-#    BEGIN=$WHITE$DOWNBAR$HORBAR
     BEGIN=$WHITE$HORBAR
     if [[ $RETVAL != 0 ]]; then
 	echo $BEGIN[$BLOODRED$CROSS$WHITE]
@@ -75,8 +74,8 @@ function retval_module
 
 function user_module
 {
-#     echo $HORBAR[$(if [[ ${EUID} == 0 ]]; then echo $BLOODRED'\h'; else echo $YELLOW'\u'$GRAY'@'$LIGHT_CYAN'\h'; fi)$WHITE]
-     echo $HORBAR[$(if [[ ${EUID} == 0 ]]; then echo $BLOODRED; else echo $YELLOW; fi)'\u'$WHITE]
+     echo $HORBAR[$(if [[ ${EUID} == 0 ]]; then echo $BLOODRED'\h'; else echo $YELLOW'\u'$GRAY'@'$LIGHT_CYAN'\h'; fi)$WHITE]
+#     echo $HORBAR[$(if [[ ${EUID} == 0 ]]; then echo $BLOODRED; else echo $YELLOW; fi)'\u'$WHITE]
 }
 
 function location_module
