@@ -140,6 +140,7 @@ add_commit_push ()
 }
 
 alias gacp='add_commit_push'
+alias gadd='git add . && git commit --amend --no-edit'
 alias gas='git add . && git status'
 alias gash='git stash'
 alias gashc='git stash clear'
@@ -151,6 +152,7 @@ alias gch='git checkout .'
 alias gchm='git checkout master'
 alias gds='git diff && git diff --check && git status'
 alias gf='git commit --fixup=`git rev-parse HEAD`'
+alias gitk='gitk --all'
 alias gl='git log --graph -7 --oneline'
 alias gp='git push'
 alias gpull='git pull'
@@ -189,7 +191,7 @@ alias dl-yt='youtube-dl --extract-audio --audio-format mp3'
 docker_clean() {
     docker kill $(docker ps -q)
     docker rm $(docker ps -aq)
-    docker rmi $(docker images -q)
+    docker rmi $(docker images -q) --force
 }
 
 alias dckr-clean='docker_clean'
