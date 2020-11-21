@@ -195,3 +195,6 @@ docker_clean() {
 }
 
 alias dckr-clean='docker_clean'
+alias update="sudo pacman -Syy && sudo pacman -Syu"
+
+export PATH="$PATH:~/.bin/common:~/.bin/arch:/usr/lib/ccache/bin"
