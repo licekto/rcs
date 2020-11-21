@@ -2,7 +2,7 @@
 Skin=legacy
 
 [Desktop Entry]
-DefaultProfile=
+DefaultProfile=Profile.profile
 
 [Dialogs]
 FirstRun=false
