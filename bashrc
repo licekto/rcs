@@ -13,25 +13,26 @@ stty -ixon
 
 #PS1="┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \[\e[31m\]✘\[\e[0m\]; fi\`]───[\[\e[01;49;39m\]\u\[\e[00m\]\[\e[01;49;39m\]@\H\[\e[00m\]]───[\[\e[1;49;34m\]\W\[\e[0m\]]───[\[\e[1;49;39m\]\$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\[\e[0m\]]\n└───▶ "
 
-RED="\[\e[0;36m\]"
-GRAY="\[\e[0;37m\]"
-YELLOW="\[\e[0;33m\]"
-BLUE="\[\e[0;34m\]"
-PURPLE="\[\e[0;35m\]"
-GREEN="\[\e[0;32m\]"
-WHITE="\[\e[0;37m\]"
-BLOODRED="\[\e[1;31m\]"
-CYAN="\[\e[1;34m\]"
-LIGHT_CYAN="\[\e[0;96m\]"
-LIGHT_GREEN="\[\e[1;32m\]"
-TXTRST="\[\e[0m\]"
+RED='\[\e[0;36m\]'
+GRAY='\[\e[0;37m\]'
+YELLOW='\[\e[0;33m\]'
+BLUE='\[\e[0;34m\]'
+PURPLE='\[\e[0;35m\]'
+GREEN='\[\e[0;32m\]'
+WHITE='\[\e[0;37m\]'
+BLOODRED='\[\e[1;31m\]'
+CYAN='\[\e[1;34m\]'
+LIGHT_CYAN='\[\e[0;96m\]'
+LIGHT_GREEN='\[\e[1;32m\]'
+TXTRST='\[\e[0m\]'
 
-DOWNBAR='\342\224\214'
-HORBAR='\342\224\200'
-UPBAR='\342\224\224'
-HORBARPLUG='\342\225\274'
-CROSS='\342\234\227'
-TICK='\342\234\224'
+DOWNBAR='\[\342\224\214\]'
+#HORBAR="\342\224\200"
+HORBAR='-'
+UPBAR='\[\342\224\224\]'
+HORBARPLUG='\[\342\225\274\]'
+CROSS='\[\342\234\227\]'
+TICK='\[\342\234\224\]'
 
 function parse_git_dirty
 {
@@ -48,7 +49,7 @@ function git_module
     if [[ $(git status 2> /dev/null) ]];then
         echo $WHITE$HORBAR[$PURPLE$(parse_git_branch)$WHITE];
     fi
- }
+}
 
 function file_module
 {
@@ -65,6 +66,7 @@ function retval_module
 {
     RETVAL=$?
     BEGIN=$WHITE$HORBAR
+    BEGIN=$HORBAR
     if [[ $RETVAL != 0 ]]; then
 	echo $BEGIN[$BLOODRED$CROSS$WHITE]
     else
@@ -80,7 +82,7 @@ function user_module
 
 function location_module
 {
-    echo $HORBAR[$LIGHT_GREEN'\w'$WHITE]
+     echo $HORBAR[$LIGHT_GREEN'\w'$WHITE]
 }
 
 function set_bash_prompt
