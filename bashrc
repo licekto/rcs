@@ -31,8 +31,10 @@ DOWNBAR='\[\342\224\214\]'
 HORBAR='-'
 UPBAR='\[\342\224\224\]'
 HORBARPLUG='\[\342\225\274\]'
-CROSS='\[\342\234\227\]'
-TICK='\[\342\234\224\]'
+#CROSS='\[\342\234\227\]'
+#TICK='\[\342\234\224\]'
+CROSS='x'
+TICK='o'
 
 function parse_git_dirty
 {
