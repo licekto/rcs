@@ -57,3 +57,5 @@ function! DiffWithFileFromDisk()
     diffthis
 endfunction
 nmap <F7> :call DiffWithFileFromDisk()<cr>
+
+set nofixendofline

@@ -121,52 +121,54 @@ extract ()
 export -f extract
 
 # Git
-alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
-
-add_commit_push ()
-{
-    if [ -z "$1" ] ; then
-        echo "Commit message must not by empty"
-        return
-    fi
-
-    CHANGES=$(git diff --exit-code && git ls-files . --others)
-
-    if [ -z "$CHANGES" ] ; then
-        echo "No changes to commit"
-        return
-    fi
-
-    git add .
-    git commit -m "$1"
-    gpu
-}
-
-alias gacp='add_commit_push'
-alias gadd='git add . && git commit --amend --no-edit'
-alias gas='git add . && git status'
-alias gash='git stash'
-alias gashc='git stash clear'
-alias gb='git checkout -b'
-alias gblrm='git branch -D'
-alias gbrrm='git push origin --delete'
-alias gc='git commit -m'
-alias gch='git checkout .'
-alias gchm='git checkout master'
-alias gds='git diff && git diff --check && git status'
-alias gf='git commit --fixup=`git rev-parse HEAD`'
-alias gitk='gitk --all'
-alias gl='git log --graph -7 --oneline'
-alias gp='git push'
-alias gpull='git pull'
-alias gr='git remote -v'
-alias gria='git rebase --interactive --autosquash'
-alias grm='git clean -f'
-alias grmcheck='git clean -n'
-alias gs='git status'
-alias gsu='git submodule update'
-alias gu='git pull && git submodule update'
-alias gunstage='git reset HEAD'
+alias g='git'
+# Leave 'em here for now...
+#alias gpu='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+#
+#add_commit_push ()
+#{
+#    if [ -z "$1" ] ; then
+#        echo "Commit message must not by empty"
+#        return
+#    fi
+#
+#    CHANGES=$(git diff --exit-code && git ls-files . --others)
+#
+#    if [ -z "$CHANGES" ] ; then
+#        echo "No changes to commit"
+#        return
+#    fi
+#
+#    git add .
+#    git commit -m "$1"
+#    gpu
+#}
+#
+#alias gacp='add_commit_push'
+#alias gadd='git add . && git commit --amend --no-edit'
+#alias gas='git add . && git status'
+#alias gash='git stash'
+#alias gashc='git stash clear'
+#alias gb='git checkout -b'
+#alias gblrm='git branch -D'
+#alias gbrrm='git push origin --delete'
+#alias gc='git commit -m'
+#alias gch='git checkout .'
+#alias gchm='git checkout master'
+#alias gds='git diff && git diff --check && git status'
+#alias gf='git commit --fixup=`git rev-parse HEAD`'
+#alias gitk='gitk --all'
+#alias gl='git log --graph -7 --oneline'
+#alias gp='git push'
+#alias gpull='git pull'
+#alias gr='git remote -v'
+#alias gria='git rebase --interactive --autosquash'
+#alias grm='git clean -f'
+#alias grmcheck='git clean -n'
+#alias gs='git status'
+#alias gsu='git submodule update'
+#alias gu='git pull && git submodule update'
+#alias gunstage='git reset HEAD'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -std=c++17 -ggdb -O0'
