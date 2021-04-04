@@ -37,20 +37,29 @@ untracked = cyan
     amd = commit -a --amend --no-edit
     as = !git add . && git status
     b = checkout -b
+    ba = for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname
     blrm = branch -D
     brrm = push origin --delete
     c = commit -m
     ch = checkout .
+    # Keep in mind that this works only against master.
+    # If your branch was brached off from a branch that
+    # was branched off from master, then this gives the
+    # number of commits from master.
+    cc = !git rev-list --count HEAD ^master
+    ch = checkout .
     chm = checkout master
+    d = !git diff && git diff --staged && git diff --check
     ds = !git diff && git diff --staged && git diff --check && git status
     f = !git commit --fixup=`git rev-parse HEAD`
     k = !gitk --all
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --numstat
     la = "!git config -l | grep alias | cut -c 7-"
+    last = show --summary
     p = push
     pu = !git push -u origin `git rev-parse --abbrev-ref HEAD`
     r = remote -v
-    ria = rebase --interactive --autosquash
+    ria = !git rebase --interactive --autosquash HEAD~`git cc`
     rmf = clean -f
     rmcheck = clean -n
     s = status
@@ -59,8 +68,12 @@ untracked = cyan
     su = submodule update
     u = !git pull && git submodule update
     unstage = reset HEAD
+
+[gc]
+    auto = 0
+
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
