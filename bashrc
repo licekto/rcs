@@ -122,6 +122,7 @@ export -f extract
 
 # Git
 alias g='git'
+alias gitk='gitk --all'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -std=c++17 -ggdb -O0'
