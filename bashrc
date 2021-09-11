@@ -129,6 +129,7 @@ alias gxx='g++ -pedantic -Wall -Wextra -std=c++17 -ggdb -O0'
 alias valgrindxx='valgrind --leak-check=full --show-reachable=yes --track-origins=yes'
 
 # Command-line
+alias ls='ls --color=auto'
 alias setclip='xclip -selection c'
 alias c.='cd ..'
 alias c..='cd ../..'
