@@ -1,12 +1,6 @@
 #!/bin/bash
 
-if [[ $# -ne 1 ]]
-then
-    echo "Provide a path to home directory"
-    exit 1
-fi
-
-HOME_DIR="$1"
+HOME_DIR=$(echo ~)
 
 rm -rf $HOME_DIR/.gitconfig $HOME_DIR/.vimrc $HOME_DIR/.config/mc/ini
 
