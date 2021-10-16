@@ -159,4 +159,6 @@ alias dckr-clean='docker_clean'
 alias update="sudo pacman -Syy && sudo pacman -Syu"
 alias less=bat
 
+alias myip='curl ifconfig.me'
+
 export PATH="$PATH:/home/$USER/.bin/common:/home/$USER/.bin/arch:/usr/lib/ccache/bin"
