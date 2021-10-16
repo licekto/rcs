@@ -8,6 +8,8 @@ fi
 
 HOME_DIR="$1"
 
+rm -rf $HOME_DIR/.gitconfig $HOME_DIR/.vimrc $HOME_DIR/.config/mc/ini
+
 ln -s $HOME_DIR/.rcs/gitconfig $HOME_DIR/.gitconfig
 ln -s $HOME_DIR/.rcs/vimrc $HOME_DIR/.vimrc
 ln -s $HOME_DIR/.rcs/mc_ini $HOME_DIR/.config/mc/ini
