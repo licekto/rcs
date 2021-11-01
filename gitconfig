@@ -56,9 +56,24 @@ untracked = cyan
     l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --numstat
     la = "!git config -l | grep alias | cut -c 7-"
     last = show --summary
+    myb = "!f() { \
+            git for-each-ref --sort=authorname --format \"%(authorname) %(refname)\" \
+            | grep \"$(git config user.name)\" \
+            | cut -d' ' -f 1,8 \
+            | sed 's/,/:/g' \
+            | sed 's/refs\\/remotes\\/origin\\///g' \
+            | sed 's/refs\\/heads\\///g' \
+            | sort | uniq; \
+            }; f"
     p = push
     pu = !git push -u origin `git rev-parse --abbrev-ref HEAD`
     r = remote -v
+    rbm = "!f() { \
+            CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD); \
+            echo $CURRENT_BRANCH; \
+            git chm && git u && git checkout $CURRENT_BRANCH && git rebase master && g pu -f; \
+            }; f"
+    ri = !git rebase --interactive HEAD~`git cc`
     ria = !git rebase --interactive --autosquash HEAD~`git cc`
     rmf = clean -f
     rmcheck = clean -n
