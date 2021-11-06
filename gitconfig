@@ -2,6 +2,9 @@
 name = Tomas Licek
 email = licekto@gmail.com
 
+[core]
+excludesfile = ~/.rcs/gitignore
+
 [color]
 ui = auto
 
