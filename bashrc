@@ -143,7 +143,7 @@ alias diskspace='du -S | sort -n -r |more'
 # Vim as a default editor
 export VISUAL=vim
 export EDITOR=vim
-export VIEWER=bat
+export VIEWER=~/.rcs/viewer.sh
 
 # Download mp3 from youtube
 alias dl-yt='youtube-dl --extract-audio --audio-format mp3'
