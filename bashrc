@@ -161,4 +161,4 @@ alias less=bat
 
 alias myip='curl ifconfig.me; echo'
 
-export PATH="$PATH:/home/$USER/.bin/common:/usr/lib/ccache/bin"
+export PATH="/usr/lib/ccache/bin:$PATH:/home/$USER/.bin/common"

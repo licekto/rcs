@@ -83,7 +83,7 @@ untracked = cyan
     s = status
     # list branches sorted by last modified
     sortb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
-    su = submodule update
+    su = submodule update --init --recursive
     u = !git pull && git submodule update
     unstage = reset HEAD
 
