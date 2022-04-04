@@ -1,28 +1,31 @@
 [user]
-name = Tomas Licek
-email = licekto@gmail.com
+    name = Tomas Licek
+    email = licekto@gmail.com
+
+[pull]
+    rebase = true
 
 [core]
-excludesfile = ~/.rcs/gitignore
+    excludesfile = ~/.rcs/gitignore
 
 [color]
-ui = auto
+    ui = auto
 
 [color "branch"]
-current = yellow reverse
-local = yellow
-remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [color "diff"]
-meta = yellow bold
-frag = magenta bold
-old = red bold
-new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 
 [color "status"]
-added = yellow
-changed = green
-untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [alias]
     acp = "!f() { \
@@ -44,7 +47,6 @@ untracked = cyan
     blrm = branch -D
     brrm = push origin --delete
     c = commit -m
-    ch = checkout .
     # Keep in mind that this works only against master.
     # If your branch was brached off from a branch that
     # was branched off from master, then this gives the
