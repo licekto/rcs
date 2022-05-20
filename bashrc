@@ -160,5 +160,6 @@ alias update="sudo pacman -Syy && sudo pacman -Syu"
 alias less=bat
 
 alias myip='curl ifconfig.me; echo'
+alias clip='xclip -selection clipboard'
 
 export PATH="/usr/lib/ccache/bin:$PATH:/home/$USER/.bin/common"
