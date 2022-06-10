@@ -118,7 +118,22 @@ extract ()
    fi
 }
 
+get-bat-cmd()
+{
+    BAT_CMD=
+    
+    if command -v batcat &> /dev/null
+    then
+        BAT_CMD=batcat
+    else
+        BAT_CMD=bat
+    fi
+    
+    echo $BAT_CMD
+}
+
 export -f extract
+export -f get-bat-cmd
 
 # Git
 alias g='git'
@@ -157,12 +172,12 @@ docker_clean() {
 
 alias dckr-clean='docker_clean'
 alias update="sudo pacman -Syy && sudo pacman -Syu"
-alias less=bat
+alias less=$(get-bat-cmd)
 
-if command -v batcat &> /dev/null
-then
-    alias bat=batcat
-fi
+#if command -v batcat &> /dev/null
+#then
+#    alias bat=batcat
+#fi
 
 alias myip='curl ifconfig.me; echo'
 alias clip='xclip -selection clipboard'
