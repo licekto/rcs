@@ -159,6 +159,11 @@ alias dckr-clean='docker_clean'
 alias update="sudo pacman -Syy && sudo pacman -Syu"
 alias less=bat
 
+if command -v batcat &> /dev/null
+then
+    alias bat=batcat
+fi
+
 alias myip='curl ifconfig.me; echo'
 alias clip='xclip -selection clipboard'
 
