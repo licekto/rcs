@@ -12,3 +12,4 @@ git config --global core.excludesfile $HOME_DIR/.rcs/gitignore
 
 touch $HOME_DIR/.bashrc
 echo "source $HOME_DIR/.rcs/bashrc" >> $HOME_DIR/.bashrc
+echo "source $HOME_DIR/.rcs/aliases" >> $HOME_DIR/.bashrc

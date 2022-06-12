@@ -1,0 +1,76 @@
+# Extract
+extract ()
+{
+   if [ -f $1 ] ; then
+       case $1 in
+           *.tar.bz2)   tar xvjf $1    ;;
+           *.tar.gz)    tar xvzf $1    ;;
+           *.bz2)       bunzip2 $1     ;;
+           *.rar)       unrar x $1       ;;
+           *.gz)        gunzip $1      ;;
+           *.tar)       tar xvf $1     ;;
+           *.tbz2)      tar xvjf $1    ;;
+           *.tgz)       tar xvzf $1    ;;
+           *.zip)       unzip $1       ;;
+           *.Z)         uncompress $1  ;;
+           *.7z)        7z x $1        ;;
+           *)           echo "don't know how to extract '$1'..." ;;
+       esac
+   else
+       echo "'$1' is not a valid file!"
+   fi
+}
+
+get-bat-cmd()
+{
+    BAT_CMD=
+    
+    if command -v batcat &> /dev/null
+    then
+        BAT_CMD=batcat
+    else
+        BAT_CMD=bat
+    fi
+    
+    echo $BAT_CMD
+}
+
+export -f extract
+export -f get-bat-cmd
+
+# Git
+alias g='git'
+alias gitk='gitk --all'
+
+# Compile
+alias gxx='g++ -pedantic -Wall -Wextra -std=c++17 -ggdb -O0'
+alias valgrindxx='valgrind --leak-check=full --show-reachable=yes --track-origins=yes'
+
+# Command-line
+alias ls='ls --color=auto'
+alias setclip='xclip -selection c'
+alias c.='cd ..'
+alias c..='cd ../..'
+alias c...='cd ../../..'
+alias v='vim'
+alias ls='ls --color=auto'
+alias l='ls -lSh'
+alias la='l -a'
+alias diskspace='du -S | sort -n -r |more'
+
+# Download mp3 from youtube
+alias dl-yt='youtube-dl --extract-audio --audio-format mp3'
+
+# Docker
+docker_clean() {
+    docker kill $(docker ps -q)
+    docker rm $(docker ps -aq)
+    docker rmi $(docker images -q) --force
+}
+
+alias dckr-clean='docker_clean'
+alias update="sudo pacman -Syy && sudo pacman -Syu"
+alias less=$(get-bat-cmd)
+
+alias myip='curl ifconfig.me; echo'
+alias clip='xclip -selection clipboard'

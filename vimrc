@@ -59,3 +59,7 @@ endfunction
 nmap <F7> :call DiffWithFileFromDisk()<cr>
 
 set nofixendofline
+
+" MacOS
+:map <ESC>[H <Home>
+:map <ESC>[F <End>
