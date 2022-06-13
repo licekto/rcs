@@ -95,8 +95,6 @@ function set_bash_prompt
 
 PROMPT_COMMAND=set_bash_prompt
 
-export PATH="/usr/lib/ccache/bin:$PATH:/home/$USER/.bin/common"
-
 # Vim as a default editor
 export VISUAL=vim
 export EDITOR=vim

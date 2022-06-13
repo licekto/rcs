@@ -6,7 +6,7 @@
     rebase = true
 
 [core]
-    excludesfile = ~/.rcs/gitignore
+	excludesfile = /home/tomas/.rcs/gitignore
 
 [color]
     ui = auto
