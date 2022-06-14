@@ -35,8 +35,8 @@ get-bat-cmd()
     echo $BAT_CMD
 }
 
-export -f extract
-export -f get-bat-cmd
+export -f extract > /dev/null
+export -f get-bat-cmd > /dev/null
 
 # Git
 alias g='git'
