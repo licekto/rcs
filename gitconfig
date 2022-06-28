@@ -40,6 +40,7 @@
             fi; \
             git add . && git commit -m \"$1\" && git pu; \
            }; f"
+    adog = log --all --decorate --oneline --graph
     amd = commit -a --amend --no-edit
     as = !git add . && git status
     b = checkout -b
