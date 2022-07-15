@@ -77,7 +77,7 @@
     rbm = "!f() { \
             CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD); \
             echo $CURRENT_BRANCH; \
-            git chm && git u && git checkout $CURRENT_BRANCH && git rebase master && g pu -f; \
+            git chm && git u && git checkout $CURRENT_BRANCH && git rebase master && git pu -f; \
             }; f"
     ri = !git rebase --interactive HEAD~`git cc`
     ria = !git rebase --interactive --autosquash HEAD~`git cc`
