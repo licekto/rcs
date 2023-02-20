@@ -5,8 +5,14 @@
 [pull]
     rebase = true
 
+[push]
+    default = simple
+
+[rebase]
+    autoStash = true
+
 [core]
-	excludesfile = /home/tomas/.rcs/gitignore
+    excludesfile = /home/tomas/.rcs/gitignore
 
 [color]
     ui = auto
