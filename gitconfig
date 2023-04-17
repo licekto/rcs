@@ -61,6 +61,7 @@
     cc = !git rev-list --count HEAD ^master
     ch = checkout .
     chm = checkout master
+    chp = cherry-pick
     d = !git diff && git diff --staged && git diff --check
     ds = !git diff && git diff --staged && git diff --check && git status
     f = !git commit --fixup=`git rev-parse HEAD`
