@@ -3,3 +3,4 @@ CMakeLists.txt.user
 *.swp
 vgcore.*
 Build/*
+.vscode
