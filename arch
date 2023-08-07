@@ -1,2 +1,4 @@
+#export PATH="/usr/lib/distcc/bin:$PATH"
 export PATH="/usr/lib/ccache/bin:$PATH:/home/$USER/.bin/arch:/home/$USER/.bin/common"
 export MSAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
+export DISTCC_HOSTS="server"

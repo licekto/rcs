@@ -74,3 +74,5 @@ alias less=$(get-bat-cmd)
 
 alias myip='curl ifconfig.me; echo'
 alias clip='xclip -selection clipboard'
+
+alias distccmake='CC="distcc gcc" CXX="distcc g++" cmake'
