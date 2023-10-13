@@ -40,7 +40,7 @@ export -f get-bat-cmd > /dev/null
 
 # Git
 alias g='git'
-alias gitk='gitk --all'
+alias gitk='gitk --all &'
 
 # Compile
 alias gxx='g++ -pedantic -Wall -Wextra -std=c++20 -ggdb -O0'

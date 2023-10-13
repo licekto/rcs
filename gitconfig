@@ -48,7 +48,8 @@
             git add . && git commit -m \"$1\" && git pu; \
            }; f"
     adog = log --all --decorate --oneline --graph
-    amd = commit -a --amend --no-edit
+    can = commit --amend --no-edit
+    amd = can -a
     as = !git add . && git status
     b = checkout -b
     ba = for-each-ref --format=' %(authorname) %09 %(refname)' --sort=authorname
