@@ -3,11 +3,27 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	 . /etc/bashrc
+fi
+
+if [ -f /etc/bash.bashrc ]; then
+	 . /etc/bash.bashrc
+fi
+
 # Allow for "**" globbing
 shopt -s globstar
 
 # Disable suspending the terminal with CTRL+S
 stty -ixon
+
+# Allow parallel history
+HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 #PS1='[\u@\h \W]\$ '
 
