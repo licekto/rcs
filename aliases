@@ -54,7 +54,7 @@ alias c..='cd ../..'
 alias c...='cd ../../..'
 alias v='vim'
 alias ls='ls --color=auto'
-alias l='ls -lSh'
+alias l='ls -lh'
 alias la='l -a'
 alias diskspace='du -S | sort -n -r |more'
 
