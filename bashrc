@@ -115,3 +115,4 @@ PROMPT_COMMAND=set_bash_prompt
 export VISUAL=vim
 export EDITOR=vim
 export VIEWER=~/.rcs/viewer.sh
+HISTCONTROL=ignoreboth
