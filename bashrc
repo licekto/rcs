@@ -116,3 +116,6 @@ export VISUAL=vim
 export EDITOR=vim
 export VIEWER=~/.rcs/viewer.sh
 HISTCONTROL=ignoreboth
+
+export PATH="/usr/lib/ccache/bin:$PATH"
+export MSAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
